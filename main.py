@@ -6,17 +6,6 @@ import urllib.robotparser
 
 
 def mycrawler(url_start):
-    url_ouput=[]
-    response=requests.get(url_start).content
-    soup=BeautifulSoup(response,'html.parser')
-    links=soup.find_all('a', href=True)
-
-    links_url=[a['href'] for a in links]
-    i=0
-    while len(url_ouput)<50:
-
-        crawl(links_url[i])
-        i+=1
 
     def crawl(url):
         parsed_url=urlparse(url)
@@ -45,14 +34,29 @@ def mycrawler(url_start):
 
         except: 
             pass
+
+        
+    url_ouput=[]
+    response=requests.get(url_start).content
+    soup=BeautifulSoup(response,'html.parser')
+    links=soup.find_all('a', href=True)
+
+    links_url=[a['href'] for a in links]
+    i=0
+    while len(url_ouput)<50:
+
+        crawl(links_url[i])
+        i+=1
+
+
+
+    file = open('crawled_webpages.txt','w')
+    for url in url_ouput:
+        file.write(url+"\n")
+    file.close()
     
                 
 
 
-
-
-
-
-
-
-[print(a) for a in url_ouput]
+if "__main__"==__name__:
+    mycrawler("https://ensai.fr")
