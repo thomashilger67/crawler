@@ -1,5 +1,5 @@
 # crawler
-petit projet pour le cours d'indeation web ENSAI A SID fait par Thomas Hilger. Le but est de coder un single-threaded crawler.
+petit projet pour le cours d'indeation web ENSAI 3A SID fait par Thomas Hilger. Le but est de coder un single-threaded crawler.
 
 ## Quickstart 
 Pour lancer le crawler, il suffit de lancer à la racine du projet la commane `python main.py`
