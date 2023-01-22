@@ -35,18 +35,19 @@ def mycrawler(url_start):
         except: 
             pass
 
-        
     url_ouput=[]
     response=requests.get(url_start).content
     soup=BeautifulSoup(response,'html.parser')
     links=soup.find_all('a', href=True)
 
     links_url=[a['href'] for a in links]
+    len_url=len(links_url)
     i=0
-    while len(url_ouput)<50:
+    while len(url_ouput)<50 and len_url>i+1:
 
         crawl(links_url[i])
         i+=1
+        time.sleep(5)
 
 
 
@@ -54,7 +55,7 @@ def mycrawler(url_start):
     for url in url_ouput:
         file.write(url+"\n")
     file.close()
-    
+    return url_ouput
                 
 
 
