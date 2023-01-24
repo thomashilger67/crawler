@@ -2,6 +2,7 @@
 petit projet pour le cours d'indeation web ENSAI 3A SID fait par Thomas Hilger. Le but est de coder un single-threaded crawler.
 
 ## Quickstart 
+d'abord, assurez-vous d'avoir l'ensemble des dépendances :  executez à la racine du projet la commande `pip install -r requirements.txt`.
 Pour lancer le crawler, il suffit de lancer à la racine du projet la commane `python main.py`
 
 ## Explication 
